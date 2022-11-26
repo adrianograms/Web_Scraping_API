@@ -6,6 +6,12 @@ base_url = 'https://adrenaline.com.br/'
 
 @app.route('/last_articles')
 def last_articles():
+    """Returns all the latestes articles from adrenaline. Can be filtred by
+    topic or tag or none
+
+    Returns:
+        string: Returns all the articles in json format
+    """
     try:
         start = int(request.args.get('start'))
         end = request.args.get('end')
@@ -33,6 +39,11 @@ def last_articles():
 
 @app.route('/last_articles_topic')
 def last_articles_topic():
+    """Returns all the latest articles based only on topics
+
+    Returns:
+        string: Return a json with all the articles
+    """
     try:
         start = int(request.args.get('start'))
         end = request.args.get('end')
@@ -51,6 +62,11 @@ def last_articles_topic():
 
 @app.route('/last_articles_tag')
 def last_articles_tag():
+    """Returns all the latest articles based only on tags
+
+    Returns:
+        string: Return a json with all the articles
+    """
     try:
         start = int(request.args.get('start'))
         end = request.args.get('end')
