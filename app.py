@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from web_scraping import scrape_pages_interval, scrape_page
+from web_scraping import scrape_pages_interval
 
 app = Flask(__name__)
 base_url = 'https://adrenaline.com.br/'
@@ -84,4 +84,6 @@ def last_articles_tag():
         return "Wrong paramaters", 400
 
 app.config['JSON_AS_ASCII'] = False
-app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)
